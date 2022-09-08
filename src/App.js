@@ -1,5 +1,6 @@
 import React from 'react';
-import Product from './Product';
+import Product from './components/Product';
+import { ReactComponent as ShoppingCart } from './assets/winkelmandje.svg';
 import citroenen from './assets/citroenen.jpeg';
 import limoenen from './assets/limoenen.png';
 import ijsblokjes from './assets/ijsblokjes.jpg';
@@ -10,6 +11,14 @@ function App() {
 
     return (
         <>
+            <nav>
+                <ul>
+                    <li><a href="/">Shop</a></li>
+                    <li><a href="/">Ons verhaal</a></li>
+                    <li><a href="/">Blog</a></li>
+                </ul>
+                <ShoppingCart className="shopping-cart-icon"/>
+            </nav>
             <header>
                 <h1>Fruit perfection</h1>
                 <button
@@ -19,7 +28,6 @@ function App() {
                     Shop nu
                 </button>
             </header>
-
             <main>
                 <Product
                     image={citroenen}
@@ -37,11 +45,9 @@ function App() {
                     description="Een ijsblokje of ijsklontje is bevroren water in de vorm van een klein blokje. Het wordt gemaakt in een diepvriezer door water in een plastic vorm te laten bevriezen."
                 />
             </main>
-
             <footer>
                 <div className="form-container">
                     <h2>Contactformulier</h2>
-
                     <form>
                         <input
                             type="text"
@@ -51,7 +57,6 @@ function App() {
                             onChange={(e) => setMessageValue(e.target.value)}
                         />
                     </form>
-
                     <button type="submit">
                         Verstuur
                     </button>
